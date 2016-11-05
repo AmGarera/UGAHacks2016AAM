@@ -5,6 +5,10 @@
 var sentiemntSeries = [];
 var sentiementSeries = [];
 
+$( document ).ready(function() {
+    $('#posnegChart').hide();
+});
+
 function calcSetiment() {
     var positive = 0;
     var negative = 0;
@@ -47,16 +51,20 @@ function calcSetiment() {
 
     // Displays if its positive, negative or neutral
     if (average > 0) {
-        document.getElementById("sentiment").innerText = "Positive sentiment!"
+        document.getElementById("sentiment").innerText = "Positive sentiment!";
+        $('#posnegChart').show();
     }
     else if (average == 0) {
-        document.getElementById("sentiment").innerText = "Neutral sentiment!"
+        document.getElementById("sentiment").innerText = "Neutral sentiment!";
+        $('#posnegChart').hide();
     }
     else {
-        document.getElementById("sentiment").innerText = "Negative sentiment!"
+        document.getElementById("sentiment").innerText = "Negative sentiment!";
+        $('#posnegChart').show();
     }
 
     console.log(sentiemntSeries);
+
 
     var ctx = document.getElementById("posnegChart").getContext('2d');
     var posnegChart = new Chart(ctx, {

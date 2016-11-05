@@ -1,12 +1,18 @@
+$('img[data-default-src]').each(function(){
+    var defaultSrc = $(this).data('default-src');
+    $(this).on('error', function(){
+        $(this).attr({src: defaultSrc});
+    });
+});
 
 $('searchIcon').addClass('active');
 
 //Side nav enabled and configured
 $('.button-collapse').sideNav({
-      menuWidth: 240, 
+      menuWidth: 240,
       edge: 'right',
-      closeOnClick: true, 
-      draggable: true 
+      closeOnClick: true,
+      draggable: true
     }
 );
 
@@ -14,10 +20,10 @@ $('.button-collapse').sideNav({
 $(document).ready(function(){
     $('.collapsible').collapsible();
     $('.button-collapse').sideNav({
-      menuWidth: 240, 
+      menuWidth: 240,
       edge: 'right',
-      closeOnClick: true, 
-      draggable: true 
+      closeOnClick: true,
+      draggable: true
     }
 );
 });

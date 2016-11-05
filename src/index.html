@@ -22,6 +22,8 @@
     <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <script src="js/setiment.js"></script>
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -34,15 +36,8 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
         <script src="js/alchemy_api.js"></script>
-    </head>
-    <body>
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+        <script src="js/setiment.js"></script>
 
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-    </body>
 <!--content here -->
 <div class="container">
     <!--Search Bar starts here-->
@@ -58,10 +53,13 @@
     <!--Search bar ends here-->
 </div>
 
+<button onclick="calcSetiment()">Setiment</button>
+
 <div class="center-align">
     <div class="row">
         <div class="col s6 offset-s3">
             <div class="card-panel">
+                <label id="sentiment"></label>
             <div class="ct-chart ct-golden-section" id="chart1"></div>
             <div class="ct-chart ct-golden-section" id="chart2"></div>
 

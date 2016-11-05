@@ -17,11 +17,16 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="../node_modules/chart.js/dist/Chart.js"></script>
     <!--MaterialCSS-->
     <script src="../node_modules/materialize-css/node_modules/jquery/dist/jquery.js"></script>
     <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
     <script src="js/main.js"></script>
 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <script src="js/setiment.js"></script>
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -34,15 +39,8 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
         <script src="js/alchemy_api.js"></script>
-    </head>
-    <body>
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+        <script src="js/setiment.js"></script>
 
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-    </body>
 <!--content here -->
 <div class="right-align">
     <button class="btn-flat" >Login<i class="material-icons">https</i></button>
@@ -63,25 +61,17 @@
     <!--Search bar ends here-->
 </div>
 
+<button onclick="calcSetiment()">Setiment</button>
+
 <div class="center-align">
     <div class="row">
         <div class="col s6 offset-s3">
             <div class="card-panel">
-            <div class="ct-chart ct-golden-section" id="chart1"></div>
-            <div class="ct-chart ct-golden-section" id="chart2"></div>
-
+                <label id="sentiment"></label>
+                <canvas id="posnegChart" width="300" height="300"></canvas>
+                <!--<canvas id="posnegavgChart" width="300" height="300"></canvas>-->
             <script>
-                // Initialize a Line chart in the container with the ID chart1
-                new Chartist.Line('#chart1', {
-                    labels: [1, 2, 3, 4],
-                    series: [[100, 120, 280, 200]]
-                });
 
-                // Initialize a Line chart in the container with the ID chart2
-                new Chartist.Bar('#chart2', {
-                    labels: [1, 2, 3, 4],
-                    series: [[5, 2, 8, 3]]
-                });
             </script>
         </div>
     </div>

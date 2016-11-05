@@ -34,25 +34,27 @@
     your browser</a> to improve your experience and security.</p>
 <![endif]-->
 
-        <!--<link rel="stylesheet" href="css/normalize.css">-->
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+<!--<link rel="stylesheet" href="css/normalize.css">-->
+<link rel="stylesheet" href="css/main.css">
+<script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
-        <script src="js/alchemy_api.js"></script>
-        <script src="js/setiment.js"></script>
+<script src="js/alchemy_api.js"></script>
+<script src="js/setiment.js"></script>
 
 <!--content here -->
 <div class="right-align">
-    <button class="btn-flat" >Login<i class="material-icons">https</i></button>
+    <button class="btn-flat">Login<i class="material-icons">https</i></button>
 </div>
 <div class="container">
-    <div class="card-title center-align"><img id="companyLogoImg" src=""><h1>SAFB</h1></div>
+    <!--LOGO-->
+    <div class="card-title center-align"><img id="companyLogoImg" src="https://logo.clearbit.com/">
+        <!--Web App Title-->
+        <h1>Fiscus</h1></div>
     <!--Search Bar starts here-->
     <div class="nav-wrapper">
-        <!--TODO Company LOGO From Search Bar-->
-        <form onsubmit="getCompanyName(this);">
+        <form onsubmit="return false;">
             <div class="input-field">
-                <input id="search" type="search" required>
+                <input id="search" type="search" onkeypress="getCompanyName();" required>
                 <label for="search"><i class="material-icons">search</i></label>
                 <i class="material-icons">close</i>
             </div>
@@ -61,7 +63,7 @@
     <!--Search bar ends here-->
 </div>
 
-<button onclick="calcSetiment()">Setiment</button>
+<button onclick="calcSetiment()">Sentiment</button>
 
 <div class="center-align">
     <div class="row">
@@ -70,12 +72,12 @@
                 <label id="sentiment"></label>
                 <canvas id="posnegChart" width="300" height="300"></canvas>
                 <!--<canvas id="posnegavgChart" width="300" height="300"></canvas>-->
-            <script>
+                <script>
 
-            </script>
+                </script>
+            </div>
         </div>
     </div>
-</div>
 </div>
 </body>
 </html>

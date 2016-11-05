@@ -5,21 +5,45 @@ html, body {
 }
 
 body {
-    background-color: rgb(200,200,200);
+    background-color: rgb(240,240,240);
 }
 
 .container {
-    width: 100vw;
+    width: 100%;
+    float: left;
 }
 
-.col {
-    height: 100vh;
+/** Side nav *****************************************************************/
+.background img {
+    width: 100%;
+    height: 100%;
 }
 
-.pSidebar {
-    background-color: rgb(44,44,44);
+.active .searchIcon {
+    visibility: hidden;
 }
 
-.pContent {
-    background-color: rgb(185,185,185);
+#searchSideNav {
+    padding-left: 5%;
+    width: 90%;
+}
+
+.logout {
+    padding-top: 90%;
+}
+
+header, main, footer {
+    padding-left: 310px;
+}
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
+
+.pCharts {
+    width: 95%;
+    height: 300px;
+    padding-left: 10px;
 }

@@ -1,20 +1,73 @@
-var data = {
-    // A labels array that can contain any sort of values
-    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-    // Our series array that contains series objects or in this case series data arrays
-    series: [
-        [5, 2, 4, 2, 0]
-    ]
-};
 
-// As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
-// as you saw in the previous example
-var options = {
-    width: 300,
-    height: 200
-};
+$('searchIcon').addClass('active');
 
-// Create a new line chart object where as first parameter we pass in a selector
-// that is resolving to our chart container element. The Second parameter
-// is the actual data object. As a third parameter we pass in our custom options.
-new Chartist.Line('.ct-chart', data, options);
+//Side nav enabled and configured
+$('.button-collapse').sideNav({
+      menuWidth: 240, 
+      edge: 'right',
+      closeOnClick: true, 
+      draggable: true 
+    }
+);
+
+//Collapsible company section enabled
+$(document).ready(function(){
+    $('.collapsible').collapsible();
+    $('.button-collapse').sideNav({
+      menuWidth: 240, 
+      edge: 'right',
+      closeOnClick: true, 
+      draggable: true 
+    }
+);
+});
+
+//Chart.js setup
+var ctx = document.getElementById("pChartsCanvas").getContext("2d");
+var posnegChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+
+function getCompanyName() {
+
+
+    if(event.keyCode == 13) {
+        $("#companyLogoImg").attr('src', 'https://logo.clearbit.com/');
+        var input = document.getElementById("search").value;
+        $("#companyLogoImg").attr('src', $('#companyLogoImg').attr('src') + input + ".com");
+    }
+}
+

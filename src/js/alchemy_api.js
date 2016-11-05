@@ -13,10 +13,13 @@ var returns = "&return=enriched.url.docSentiment.type,enriched.url.docSentiment.
 var rank = "&rank=high";
 var count = "&count=4";
 
-// url + "apikey=" + apikey + mode + mode + timeFrame + search + companyName + type
 function callAlchemy(companyName) {
 
-    // Simple response handling
+    /**
+     * Response handling function. 
+     * rData  : Data structure containing all objects returned by Alchemy.
+     * rArray : Data structure within rData containing article/sentiment objects.
+     */
     fetch(url + "apikey=" + apikey + mode + mode + timeFrame + search + companyName + type + returns + rank)
         .then(function(rData) {
             console.log(rData);
@@ -26,32 +29,32 @@ function callAlchemy(companyName) {
         console.log(rData);
         console.log(rData.status);
         // bruteForce(rData.status, companyName);
+        
         var rArray = rData.result.docs;
         var sScores = [];
-        console.log(rArray);
-        // console.log(rArray[0].source);
-        for (var i = 0; i < rArray.length; i++)
-        {
-            // console.log([i]);
+
+        //Iterating over each rArray object for sentiment values
+        for (var i = 0; i < rArray.length; i++) {
             console.log(rArray[i].source.enriched.url.docSentiment.type);
             console.log(rArray[i].source.enriched.url.docSentiment.score);
             sScores.push(rArray[i].source.enriched.url.docSentiment.score);
         }
-        console.log(sScores);
-        // document.getElementById("status").innerText = rData.status;
+
     }).catch(function(err) {
-        // Error :(
-        console.log(err)
+        console.log(err);
     });
 
 }
 
+/**
+ * Use if no more API transactions for the day.
+ */
 function bruteForce(status, companyName) {
     if (status === "ERROR") {
         console.log("Loop");
-        callAlchemy(companyName)
+        callAlchemy(companyName);
     }
     else {
-        return true
+        return true;
     }
 }

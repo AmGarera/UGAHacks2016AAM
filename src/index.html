@@ -20,6 +20,7 @@
     <!--MaterialCSS-->
     <script src="../node_modules/materialize-css/node_modules/jquery/dist/jquery.js"></script>
     <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+    <script src="js/main.js"></script>
 
 </head>
 <body>
@@ -47,10 +48,11 @@
     <button class="btn-flat" >Login<i class="material-icons">https</i></button>
 </div>
 <div class="container">
-    <div class="card-title center-align"><h1>SAFB</h1></div>
+    <div class="card-title center-align"><img id="companyLogoImg" src=""><h1>SAFB</h1></div>
     <!--Search Bar starts here-->
     <div class="nav-wrapper">
-        <form>
+        <!--TODO Company LOGO From Search Bar-->
+        <form onsubmit="getCompanyName(this);">
             <div class="input-field">
                 <input id="search" type="search" required>
                 <label for="search"><i class="material-icons">search</i></label>

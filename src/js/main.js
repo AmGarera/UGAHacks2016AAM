@@ -1,20 +1,37 @@
-var data = {
-    // A labels array that can contain any sort of values
-    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-    // Our series array that contains series objects or in this case series data arrays
-    series: [
-        [5, 2, 4, 2, 0]
-    ]
-};
 
-// As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
-// as you saw in the previous example
-var options = {
-    width: 300,
-    height: 200
-};
+$('img[data-default-src]').each(function(){
+    var defaultSrc = $(this).data('default-src');
+    $(this).on('error', function(){
+        $(this).attr({src: defaultSrc});
+    });
+});
+//TODO Fix this so that Company Logo's work.
+function getCompanyName(form) {
+    var cName = form.action;
+    $("#companyLogoImg").attr('src', $('#companyLogoImg').attr('src') + "https://logo.clearbit.com/" + cName + ".com");
+    console.log(cName);
+}
 
-// Create a new line chart object where as first parameter we pass in a selector
-// that is resolving to our chart container element. The Second parameter
-// is the actual data object. As a third parameter we pass in our custom options.
-new Chartist.Line('.ct-chart', data, options);
+// $("#search").keyup(function(event){
+//     if(event.keyCode == 13){
+//         $("#companyLogoImg").attr('src', $('#companyLogoImg').attr('src') + "https://logo.clearbit.com/" + domain + ".com");
+//         return false;
+//     } else {
+//         return true;
+//     }
+// });
+
+
+
+// function getCompanyLogo(e) {
+//     var domain = document.getElementById("search");
+//     fetch("https://logo.clearbit.com/" + domain)
+//         .then(function (response) {
+//             console.log(response);
+//             return response;
+//
+//         });
+//
+//     $("#companyLogoImg").attr('src', $('#companyLogoImg').attr('src') + domain + ".com")
+//
+// }

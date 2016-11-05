@@ -24,6 +24,7 @@ function callAlchemy(companyName) {
     }).then(function (j) {
         console.log(j);
         console.log(j.status);
+        bruteForce(j.status, companyName);
         // j.docs.forEach()
         // console.log(j.source.enriched.url.docSentiment.type);
         document.getElementById("status").innerText = j.status;
@@ -32,4 +33,15 @@ function callAlchemy(companyName) {
         console.log(err)
     });
 
+}
+
+
+function bruteForce(status, companyName) {
+    if (status === "ERROR") {
+        console.log("Loop");
+        callAlchemy(companyName)
+    }
+    else {
+        return true
+    }
 }

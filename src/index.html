@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Search</title>
+    <title>Home</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,11 +17,15 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="../node_modules/chart.js/dist/Chart.js"></script>
     <!--MaterialCSS-->
     <script src="../node_modules/materialize-css/node_modules/jquery/dist/jquery.js"></script>
     <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
 
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <script src="js/setiment.js"></script>
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -29,27 +33,27 @@
     your browser</a> to improve your experience and security.</p>
 <![endif]-->
 
-        <!--<link rel="stylesheet" href="css/normalize.css">-->
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+<!--<link rel="stylesheet" href="css/normalize.css">-->
+<link rel="stylesheet" href="css/main.css">
+<script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
-        <script src="js/alchemy_api.js"></script>
-    </head>
-    <body>
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+<script src="js/alchemy_api.js"></script>
+<script src="js/setiment.js"></script>
 
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-    </body>
 <!--content here -->
+<div class="right-align">
+    <button class="btn-flat">Login<i class="material-icons">https</i></button>
+</div>
 <div class="container">
+    <!--LOGO-->
+    <div class="card-title center-align"><img id="companyLogoImg" src="https://logo.clearbit.com/">
+        <!--Web App Title-->
+        <h1>Fiscus</h1></div>
     <!--Search Bar starts here-->
     <div class="nav-wrapper">
-        <form>
+        <form onsubmit="return false;">
             <div class="input-field">
-                <input id="search" type="search" onac required>
+                <input id="search" type="search" onkeypress="getCompanyName();" required>
                 <label for="search"><i class="material-icons searchIcon">search</i></label>
                 <i class="material-icons">close</i>
             </div>
@@ -58,29 +62,23 @@
     <!--Search bar ends here-->
 </div>
 
+<button onclick="calcSetiment()">Sentiment</button>
+
 <div class="center-align">
     <div class="row">
         <div class="col s6 offset-s3">
-            <div class="card-panel">
-            <div class="ct-chart ct-golden-section" id="chart1"></div>
-            <div class="ct-chart ct-golden-section" id="chart2"></div>
+            <div class="card-panel z-depth-4">
+                <label id="sentiment"></label>
+                <canvas id="posnegChart" width="300" height="300"></canvas>
+                <!--<canvas id="posnegavgChart" width="300" height="300"></canvas>-->
+                <script>
 
-            <script>
-                // Initialize a Line chart in the container with the ID chart1
-                new Chartist.Line('#chart1', {
-                    labels: [1, 2, 3, 4],
-                    series: [[100, 120, 280, 200]]
-                });
-
-                // Initialize a Line chart in the container with the ID chart2
-                new Chartist.Bar('#chart2', {
-                    labels: [1, 2, 3, 4],
-                    series: [[5, 2, 8, 3]]
-                });
-            </script>
+                </script>
+            </div>
         </div>
     </div>
 </div>
-</div>
+
+<script src="js/main.js"></script>
 </body>
 </html>

@@ -13,35 +13,42 @@ var returns = "&return=enriched.url.docSentiment.type,enriched.url.docSentiment.
 var rank = "&rank=high";
 var count = "&count=4";
 
+var sScores = [-0.123, 0.693, 0.7222, -0.123, 0, 0.44, -0.99, -0.99];
+var allScores = top.sScores;
+
 function callAlchemy(companyName) {
+    console.log("companyName = " + companyName);
+    sScores = [];
 
     /**
-     * Response handling function. 
+     * Response handling function.
      * rData  : Data structure containing all objects returned by Alchemy.
      * rArray : Data structure within rData containing article/sentiment objects.
      */
-    fetch(url + "apikey=" + apikey + mode + mode + timeFrame + search + companyName + type + returns + rank)
+    fetch(url + mode + timeFrame + count + "&" + search + companyName + "," + type + returns + rank + "&apikey=" + apikey)
         .then(function(rData) {
             console.log(rData);
             console.log(rData.url);
             return rData.json();
-    }).then(function (rData) {
+        }).then(function (rData) {
         console.log(rData);
         console.log(rData.status);
         // bruteForce(rData.status, companyName);
-        
         var rArray = rData.result.docs;
-        var sScores = [];
-
-        //Iterating over each rArray object for sentiment values
-        for (var i = 0; i < rArray.length; i++) {
+        console.log(rArray);
+        // console.log(rArray[0].source);
+        for (var i = 0; i < rArray.length; i++)
+        {
+            // console.log([i]);
             console.log(rArray[i].source.enriched.url.docSentiment.type);
             console.log(rArray[i].source.enriched.url.docSentiment.score);
             sScores.push(rArray[i].source.enriched.url.docSentiment.score);
         }
-
+        console.log(sScores);
+        // document.getElementById("status").innerText = rData.status;
     }).catch(function(err) {
-        console.log(err);
+        // Error :(
+        console.log(err)
     });
 
 }

@@ -1,0 +1,25 @@
+html, body {
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden;
+}
+
+body {
+    background-color: rgb(200,200,200);
+}
+
+.container {
+    width: 100vw;
+}
+
+.col {
+    height: 100vh;
+}
+
+.pSidebar {
+    background-color: rgb(44,44,44);
+}
+
+.pContent {
+    background-color: rgb(185,185,185);
+}

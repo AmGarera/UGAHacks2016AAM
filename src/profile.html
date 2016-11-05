@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -15,37 +16,96 @@
     <script src="../node_modules/materialize-css/node_modules/jquery/dist/jquery.js"></script>
     <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="text/javascript" src="../node_modules/chart.js/dist/Chart.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
+
 <body>
-<!--[if lte IE 9]>
+    <main>
+        <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience and security.</p>
 <![endif]-->
-
-<!--content here -->
-<div class="container">
-    <div class="row">
-        <div class="col s3 m3 l3 pSidebar">
-            <div class="uPic">
-                
-            </div>
-            <form>
-            <div class="input-field">
-                <input id="search" type="search" required>
-                <label for="search"><i class="material-icons"></i></label>
-                <i class="material-icons">close</i>
-            </div>
+        
+        <!-- Side nav -->
+        <ul id="slide-out" class="side-nav fixed">
+            <li>
+                <div class="userView">
+                    <div class="background">
+                        <img src="img/pDefault.jpg">
+                    </div>
+                    <a href="#!user"><img class="circle" src="img/pPlaceHolder.png"></a>
+                    <a href="#!name"><span class="white-text name">John Doe</span></a>
+                    <a href="#!email"><span class="white-text email">jdoe@gmail.com</span></a>
+                </div>
+            </li>
+            <!-- Search field -->
+            <form id="searchSideNav">
+                <div class="input-field">
+                    <input id="search" type="search" required>
+                    <label for="search"><i class="material-icons searchIcon">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
             </form>
-        </div>
-        <div class="col s9 m9 l9 pContent">
-            
-        </div>
-    </div>
-</div>
+            <!-- Collapsible company section -->
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>Companies</div>
+                    <div class="collapsible-body">
+                        <p>Company 1</p>
+                    </div>
+                </li>
+            </ul>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li class="logout"><a class="waves-effect" href="#!">Logout</a></li>
+        </ul>
+        <!-- End side nav -->
 
+        <!-- Company, content area -->
+        <div class="container">
+            <!-- Dynamic company name -->
+            <h4 class="header">Company Name</h4>
+            <div class="row">
+                <!-- Company card -->
+                <div class="col s6 m6 l6">
+                    <div class="card horizontal">
+                        <div class="card-image">
+                            <!-- Dynamic logo -->
+                            <img src="img/appleLogo.png" height="150">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <!-- Dynamic link to stock -->
+                                <a href="#">SYMB</a>
+                                <br>
+                                <!-- Dynamic stock value -->
+                                <a href="#">$VAL</a>
+                                <br>
+                                <!-- Dynamic sentiment rating -->
+                                <p>Rating:</p>
+                            </div>
+                            <div class="card-action">
+                                <!-- Add selected company to followed companies -->
+                                <a href="#">ADD</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Graphs -->
+            <div class="row">
+                <div class="pCharts">
+                    <canvas class="card" id="pChartsCanvas" width="500" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+        <!-- End company, content area -->
 
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </main>
 </body>
+
 </html>

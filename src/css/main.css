@@ -1,3 +1,7 @@
 /*#d3Box {*/
     /*: center;*/
 /*}*/
+
+.active .searchIcon {
+    visibility: hidden;
+}

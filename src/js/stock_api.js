@@ -1,7 +1,8 @@
 /**
  * Created by apdun on 11/5/2016.
  */
-var url = "https://www.quandl.com/api/v3/datasets/WIKI/AAPL.json?column_index=4&order=asc&collapse=quarterly&start_date=2012-01-01&end_date=2013-12-31&api_key=";
+var url = "https://www.quandl.com/api/v3/datasets/WIKI/";
+var secondUrl = ".json?column_index=4&order=asc&collapse=quarterly&start_date=2012-01-01&end_date=2013-12-31&api_key=";
 var apiKey = "hBsaZY9LvrjvdqwB-QLt";
 
 var dateArray = [];
@@ -16,7 +17,9 @@ function getStocks(symbol) {
      * response  : Data structure containing all objects returned by Quandl.
      * rArray : Data structure within rData containing article/sentiment objects.
      */
-    fetch(url + apiKey)
+
+
+    fetch(url + symbol + secondUrl + apiKey)
         .then(function(response) {
             console.log(response);
             return response.json();

@@ -13,7 +13,7 @@ var returns = "&return=enriched.url.docSentiment.type,enriched.url.docSentiment.
 var rank = "&rank=high";
 var count = "&count=4";
 
-var sScores = [-0.123, 0.693, 0.7222, -0.123, 0, 0.44, -0.99, -0.99];
+var sScores = [-0.123, 0.693, 0.7222, -0.123, 0, 0.44, -0.99, -0.99, 1];
 var allScores = top.sScores;
 
 function callAlchemy(companyName) {

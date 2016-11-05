@@ -6,10 +6,11 @@
 var url = "https://gateway-a.watsonplatform.net/calls/data/GetNews?";
 var apikey =  "b6d15d85a0a1b7f76fcf63b53298a8568eefdf89";
 var mode = "&outputMode=json";
-var timeFrame = "&start=now-7d&end=now&count=1";
+var timeFrame = "&start=now-3d&end=now&count=1";
 var search = "q.enriched.url.entities.entity=|text=";
 var type = "type=company|";
 var returns = "&return=enriched.url.docSentiment.type";
+var rank = "&rank=high";
 
 // url + "apikey=" + apikey + mode + mode + timeFrame + search + companyName + type
 function callAlchemy(companyName) {
@@ -18,6 +19,7 @@ function callAlchemy(companyName) {
     fetch(url + "apikey=" + apikey + mode + mode + timeFrame + search + companyName + type + returns)
         .then(function(response) {
             console.log(response);
+            console.log(response.url);
             return response.json();
     }).then(function (j) {
         console.log(j);

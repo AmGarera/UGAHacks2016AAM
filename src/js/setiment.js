@@ -38,14 +38,16 @@ function calcSetiment() {
     console.log("negative" + negative);
     console.log("average" + average);
 
-    // Pushed the posative, negative and average values into the array
-    sentiemntSeries.push((100/positive), (100/(negative*-1)));
+    var total = positive + (negative*-1);
 
 
-    // Displays if its posative, negative or nutral
+    // Pushed the positive, negative and average values into the array
+    sentiemntSeries.push((positive + (negative*-1))/(negative*-1), ((negative*-1) + positive)/positive) ;
+
+
+    // Displays if its positive, negative or neutral
     if (average > 0) {
         document.getElementById("sentiment").innerText = "Positive sentiment!"
-
     }
     else if (average == 0) {
         document.getElementById("sentiment").innerText = "Neutral sentiment!"

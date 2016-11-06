@@ -26,7 +26,7 @@ function callAlchemy(companyName) {
      * rData  : Data structure containing all objects returned by Alchemy.
      * rArray : Data structure within rData containing article/sentiment objects.
      */
-    fetch("https://gateway-a.watsonplatform.net/calls/data/GetNews?outputMode=json&start=now-1d&end=now&count=5&q.enriched.url.enrichedTitle.entities.entity=|text="+ companyName +",type=company|&return=enriched.url.url,enriched.url.title,enriched.url.docSentiment.type,enriched.url.docSentiment.score,enriched.url.entities.entity.text&apikey=5630a4a68f741c6df423d94dabba58526fd96518")
+    fetch("https://gateway-a.watsonplatform.net/calls/data/GetNews?outputMode=json&start=now-3h&end=now&count=5&q.enriched.url.enrichedTitle.entities.entity=|text="+ companyName +",type=company|&return=enriched.url.url,enriched.url.title,enriched.url.docSentiment.type,enriched.url.docSentiment.score,enriched.url.entities.entity.text&apikey=5630a4a68f741c6df423d94dabba58526fd96518")
         .then(function(rData) {
             console.log(rData);
             console.log(rData.url);

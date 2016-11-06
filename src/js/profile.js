@@ -57,18 +57,3 @@ var posnegChart = new Chart(ctx, {
         }
     }
 });
-
-
-/* SENTIMENT CALLS START HERE */
-//STOCK PROVIDES THESE
-var symbol;
-var cValue;
-
-//ALCH PROVIDES THESE
-var cName;
-var sRating;
-var cLogo;
-
-cName = globalSearchedCompanies[globalSearchedCompanies.length - 1];
-sRating = sentimentScore;
-cLogo = "https://logo.clearbit.com/" + cName + ".com";

@@ -53,17 +53,19 @@ function calcSetiment() {
     if (average > 0) {
         document.getElementById("sentiment").innerText = "Positive sentiment!";
         $('#posnegChart').show();
-        sentimentScore = positive
+        localStorage.setItem("sRating", positive)
 
     }
     else if (average == 0) {
         document.getElementById("sentiment").innerText = "Neutral sentiment!";
         $('#posnegChart').hide();
+        localStorage.setItem("sRating", 0);
         sentimentScore = 0
     }
     else {
         document.getElementById("sentiment").innerText = "Negative sentiment!";
         $('#posnegChart').show();
+        localStorage.setItem("sRating", negative);
         sentimentScore= negative
     }
 

@@ -1,7 +1,9 @@
-/*#d3Box {*/
-    /*: center;*/
-/*}*/
-
+#welcomeDiv {
+    display: none;
+}
+#expando:target {
+    display: block;
+}
 .active .searchIcon {
     visibility: hidden;
 }

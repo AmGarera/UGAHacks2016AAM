@@ -1,5 +1,11 @@
-/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+/*! HTML5 Boilerplate v5.3.0 | MIT License | dist/index.html */
 
-/*#d3Box {*/
-    /*: center;*/
-/*}*/
+#welcomeDiv {
+    display: none;
+}
+#expando:target {
+    display: block;
+}
+.active .searchIcon {
+    visibility: hidden;
+}

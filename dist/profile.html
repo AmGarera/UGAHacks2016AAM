@@ -17,12 +17,8 @@
     <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script type="text/javascript" src="../node_modules/chart.js/dist/Chart.js"></script>
-    <script type="text/javascript" src="../node_modules/dexie/dist/dexie.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/dexie_api.js"></script>
-    <script src="js/alchemy_api.js"></script>
     <script src="js/profile.js"></script>
-    <script src="js/plugins.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
@@ -56,26 +52,26 @@
             <!-- Collapsible company section -->
             <ul class="collapsible" data-collapsible="accordion">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">work</i>Companies</div>
+                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>Companies</div>
                     <div class="collapsible-body">
-                        <!-- CHIPS START HERE -->
-                        <div class="chip">Apple</div>
+                        <div class="chip">
+                            <img src="img/appleLogo.png" alt="Contact Person">
+                            <script type="text/javascript">document.write(globalCompany);</script>
+                        </div>
                     </div>
                 </li>
             </ul>
             <li>
                 <div class="divider"></div>
             </li>
-            <li class="logout"><a class="waves-effect z-depth-4" href="#!">Logout<i class="material-icons">lock_open</i></a></li>
+            <li class="logout"><a class="waves-effect" href="#!">Logout</a></li>
         </ul>
         <!-- End side nav -->
 
         <!-- Company, content area -->
         <div class="container">
             <!-- Dynamic company name -->
-            <h4 class="header">
-
-            </h4>
+            <h4 class="header"><script type="text/javascript">document.write(globalCompany);</script></h4>
             <div class="row">
                 <!-- Company card -->
                 <div class="col s6 m6 l6">
@@ -97,7 +93,7 @@
                             </div>
                             <div class="card-action">
                                 <!-- Add selected company to followed companies -->
-                                <a href="#" class="addCompany">ADD</a>
+                                <a href="#">ADD</a>
                             </div>
                         </div>
                     </div>
@@ -112,6 +108,7 @@
         </div>
         <!-- End company, content area -->
 
+        <script src="js/plugins.js"></script>
     </main>
 </body>
 

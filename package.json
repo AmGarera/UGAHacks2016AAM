@@ -39,13 +39,14 @@
       "test": "test"
     }
   },
-  "homepage": "https://html5boilerplate.com/",
+  "homepage": "dist/index.html",
   "license": "MIT",
   "name": "html5-boilerplate",
   "private": true,
   "scripts": {
     "build": "gulp build",
-    "test": "gulp archive && mocha --reporter spec --timeout 5000"
+    "test": "gulp archive && mocha --reporter spec --timeout 5000",
+    "clean:dist": "rm -rf dist"
   },
   "version": "5.3.0",
   "dependencies": {

@@ -35,8 +35,8 @@ function getStocks(symbol) {
             console.log("Price: " + rArray[i][1]);
             dateArray.push(rArray[i][0]);
             priceArray.push(rArray[i][1]);
-            localStorage.setItem(rArray[i][1]);
         }
+        localStorage.setItem("cValue", rArray[i].length - 1.[1]);
         console.log(priceArray);
     }).catch(function(err) {
         // Error :(

@@ -33,13 +33,13 @@ function saveCompanyList(retSymbol, retCompanyName, retRating, retLogo, retValue
     console.log(storeCompanyName + " added to storage")
 }
 
-function returnedData(searchSybol) {
+function returnedData(searchSymbol) {
     db.companyList
         .where('symbol')
-        .equals(searchSybol)
+        .equals(searchSymbol)
         .toArray()
         .then(function (company) {
-            console.log(searchSybol + " Found");
+            console.log(searchSymbol + " Found");
             console.log(company)
         });
 }

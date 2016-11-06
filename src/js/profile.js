@@ -20,6 +20,8 @@ $(document).ready(function() {
     //document.getElementById("cValue").innerText = localStorage.getItem("cValue");
     document.getElementById("cLogo").src = localStorage.getItem("cLogo");
 
+    calcSetiment();
+
     //Add companies to list and remove them
     $('.addCompany').click(function(e) {
         e.preventDefault();

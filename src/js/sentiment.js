@@ -2,11 +2,12 @@
  * Created by apdun on 11/5/2016.
  */
 //Makes the sentiment series array gloabl
-var sentiemntSeries = [];
-var sentimentScore;
+
 
 $(document).ready(function() {
-
+    var sentiemntSeries = [];
+    var sentimentScore;
+    
     function calcSetiment() {
         document.getElementById('welcomeDiv').style.display = "block";
         var positive = 0;
@@ -49,44 +50,44 @@ $(document).ready(function() {
 
         // Displays if its positive, negative or neutral
         if (average > 0) {
-            document.getElementById("sentiment").innerText = "Positive sentiment!";
-            $('#posnegChart').show();
+            document.getElementById("pChartsCanvas").innerText = "Positive sentiment!";
+            $('#pChartsCanvas').show();
             localStorage.setItem("sRating", positive)
 
         }
         else if (average == 0) {
-            document.getElementById("sentiment").innerText = "Neutral sentiment!";
-            $('#posnegChart').hide();
+            document.getElementById("pChartsCanvas").innerText = "Neutral sentiment!";
+            $('#pChartsCanvas').hide();
             localStorage.setItem("sRating", 0);
             sentimentScore = 0
         }
         else {
-            document.getElementById("sentiment").innerText = "Negative sentiment!";
-            $('#posnegChart').show();
+            document.getElementById("pChartsCanvas").innerText = "Negative sentiment!";
+            $('#pChartsCanvas').show();
             localStorage.setItem("sRating", negative);
             sentimentScore = negative
         }
 
         console.log(sentiemntSeries);
+        var ctx = document.getElementById("pChartsCanvas");
+        var pChartsCanvas = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ["Positive Sentiment", "Negative Sentiment"],
+                datasets: [{
+                    backgroundColor: [
+                        "#00e676",
+                        "#f44336",
+                        "#95a5a6",
+                        "#9b59b6",
+                        "#f1c40f",
+                        "#e74c3c",
+                        "#34495e"
+                    ],
+                    data: sentiemntSeries
+                }]
+            }
+        });
     }
-    var ctx = document.getElementById("pChartsCanvas");
-    var pChartsCanvas = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ["Positive Sentiment", "Negative Sentiment"],
-            datasets: [{
-                backgroundColor: [
-                    "#00e676",
-                    "#f44336",
-                    "#95a5a6",
-                    "#9b59b6",
-                    "#f1c40f",
-                    "#e74c3c",
-                    "#34495e"
-                ],
-                data: sentiemntSeries
-            }]
-        }
-    });
 
 });

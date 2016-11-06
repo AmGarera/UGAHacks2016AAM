@@ -24,6 +24,8 @@ function getStocks(symbol) {
             console.log(response);
             return response.json();
         }).then(function (response) {
+            dateArray = [];
+            priceArray =[];
             console.log(response);
             var rArray = response.dataset.data;
             console.log(rArray);

@@ -23,6 +23,7 @@
     <script src="js/alchemy_api.js"></script>
     <script src="js/profile.js"></script>
     <script src="js/plugins.js"></script>
+    <script src="js/sentiment.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
@@ -82,29 +83,15 @@
                     <div class="card horizontal">
                         <div class="card-image">
                             <!-- Dynamic logo -->
-<<<<<<< HEAD
                             <img id="cLogo" src="img/appleLogo.png" height="150">
-=======
-                            <img id="cLogo" src="img/pPlaceHolder.png" height="150">
->>>>>>> aac0aa34fb7875f7dbdef1944246bf440c060659
                         </div>
                         <div class="card-stacked">
                             <div class="card-content">
                                 <!-- Dynamic link to stock -->
-<<<<<<< HEAD
                                 <p>Stock: <span id="cName"></span></p>
                                 <br>
                                 <!-- Dynamic stock value -->
                                 <p>Sentiment: <span id="rating"></span></p>
-=======
-                                <a href="#" id="cName">SYMB</a>
-                                <br>
-                                <!-- Dynamic stock value -->
-                                <a href="#" id="cValue">$VAL</a>
-                                <br>
-                                <!-- Dynamic sentiment rating -->
-                                <p>Rating<span id="rating"></span></p>
->>>>>>> aac0aa34fb7875f7dbdef1944246bf440c060659
                             </div>
                             <div class="card-action">
                                 <!-- Add selected company to followed companies -->
@@ -115,11 +102,15 @@
                 </div>
             </div>
             <!-- Graphs -->
+            <div class="row">
+                <div class="pCharts">
+                    <canvas class="card" id="pChartsCanvas" width="400" height="150"></canvas>
+                </div>
+            </div>
         </div>
         <!-- End company, content area -->
 
     </main>
-    <canvas id="pChartsCanvas" width="400" height="400"></canvas>
 </body>
 
 </html>

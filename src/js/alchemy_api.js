@@ -4,7 +4,7 @@
 
 //https://gateway-a.watsonplatform.net/calls/data/GetNews?apikey=b6d15d85a0a1b7f76fcf63b53298a8568eefdf89
 
-var sScores = [-0.123, 0.693, 0.7222, -0.123, 0, 0.44, -0.99, -0.99];
+var sScores = [];
 var allScores = top.sScores;
 
 function callAlchemy(companyName) {

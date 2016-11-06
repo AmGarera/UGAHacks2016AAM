@@ -60,5 +60,24 @@ var posnegChart = new Chart(ctx, {
 
 
 /* SENTIMENT CALLS START HERE */
-console.log("globalCompany: " + globalCompany);
-
+var template = function(text) {
+    return '<div class="chip"><img id="companyLogoImg" src="https://logo.clearbit.com/" alt="Contact Person"><script type="text/javascript">document.write(globalCompany);</script></div>';
+};
+var main = function() {
+    $('form').submit(function() {
+        var todo = $('#todo');
+        if (todo.val() !== "") {
+            var html = template(todo.val());
+            $(html).appendTo('.list');
+            $(todo).val("");
+        }
+        return false;
+    });
+    $(document).on("click", '.glyphicon-remove', function() {
+        $(this).parent().remove();
+    });
+    $(document).on("click", '.glyphicon-star', function() {
+        $(this).toggleClass('active');
+    });
+};
+$(document).ready(main);

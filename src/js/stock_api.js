@@ -61,3 +61,22 @@ function getStocks(symbol) {
 
     });
 }
+
+function companySearch(company) {
+
+    var url = "https://chstocksearch.herokuapp.com/api/";
+
+    fetch(url + company)
+        .then(function(response) {
+            console.log(response);
+            console.log("Got JSON");
+            return response.json();
+        }).then(function (response) {
+            console.log("Transcribed JSON");
+            console.log(response);
+    }).catch(function(err) {
+        // Error :(
+        console.log(err)
+    });
+
+}

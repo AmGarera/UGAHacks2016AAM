@@ -26,6 +26,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <script src="js/setiment.js"></script>
+
+    <script src="../node_modules/dexie/dist/dexie.js"></script>
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -66,6 +68,7 @@
 
 <button onclick="calcSetiment()">Sentiment</button>
 <button onclick="getStocks('TSLA')">Stock</button>
+<button onclick="companySearch('TSLA')">Company Search</button>
 
 
 <div id="chartDiv" class="center-align">

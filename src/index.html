@@ -42,6 +42,7 @@
         <script src="js/alchemy_api.js"></script>
         <script src="js/setiment.js"></script>
         <script src="js/stock_api.js"></script>
+        <script src="js/dexie_api.js"></script>
 
 <!--content here -->
 <div class="right-align">
@@ -71,6 +72,10 @@
 
 <button onclick="getStocks('TSLA')">Stock</button>
 <button onclick="companySearch('TSLA')">Company Search</button>
+<button onclick="saveCompanyList('TSLA', 'Tesla', 2.66, 'tesla.com', 2.6)">Company Save</button>
+<button onclick="returnedData('TSLA')">Return Company</button>
+<button onclick="deleteCompany('TSLA')">Delete Company</button>
+
 
 
 

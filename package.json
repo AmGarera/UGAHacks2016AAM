@@ -46,7 +46,7 @@
   "scripts": {
     "build": "gulp build",
     "test": "gulp archive && mocha --reporter spec --timeout 5000",
-    "start": ""
+    "clean:dist": "rm -rf dist"
   },
   "version": "5.3.0",
   "dependencies": {

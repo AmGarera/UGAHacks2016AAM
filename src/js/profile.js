@@ -55,27 +55,14 @@ var pChartsCanvas = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero:true
+                    beginAtZero: true
                 }
->>>>>>> origin/master
             }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
         }
-    });
+    }
+});
 
-<<<<<<< HEAD
-    //Add companies to list and remove them
-    $('.addCompany').click(function(e) {
-        e.preventDefault();
-=======
+
 //Add companies to list and remove them
 $('.addCompany').click(function(e) {
     e.preventDefault();
@@ -85,7 +72,7 @@ $('.addCompany').click(function(e) {
     var rating = localStorage.getItem("rating");
 
     saveCompanyList(rating, symbol, name)
->>>>>>> origin/master
+
 
         var name = localStorage.getItem("cName");
         var symbol = localStorage.getItem("symbol");
@@ -97,16 +84,10 @@ $('.addCompany').click(function(e) {
             '<div class="chip">' + returnedData() + '</div>');
     });
 
-<<<<<<< HEAD
     // Remove parent of 'remove' link when link is clicked.
     $('.chip').on('click', '.chip', function(e) {
         e.preventDefault();
 
         $(this).parent().remove();
     });
-});
-=======
-    $(this).parent().remove();
-});
 
->>>>>>> origin/master

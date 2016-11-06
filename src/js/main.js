@@ -9,5 +9,6 @@ function getCompanyName() {
         $("#companyLogoImg").attr('src', 'https://logo.clearbit.com/');
         searchedCompany.push(document.getElementById("search").value);
         $("#companyLogoImg").attr('src', $('#companyLogoImg').attr('src') + searchedCompany[searchedCompany.length - 1] + ".com");
+        callAlchemy(globalSearchedCompanies[globalSearchedCompanies.length - 1]);
     }
 }

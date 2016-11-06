@@ -19,6 +19,8 @@
     <script type="text/javascript" src="../node_modules/chart.js/dist/Chart.js"></script>
     <script src="js/main.js"></script>
     <script src="js/profile.js"></script>
+    <script src="js/dexie_api.js"></script>
+    <script src="js/alchemy_api.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
@@ -28,7 +30,7 @@
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience and security.</p>
 <![endif]-->
-        
+
         <!-- Side nav -->
         <ul id="slide-out" class="side-nav fixed">
             <li>
@@ -54,10 +56,15 @@
                 <li>
                     <div class="collapsible-header"><i class="material-icons">filter_drama</i>Companies</div>
                     <div class="collapsible-body">
-                        <div class="chip">
-                            <img src="img/appleLogo.png" alt="Contact Person">
-                            <script type="text/javascript">document.write(globalCompany);</script>
-                        </div>
+                        <!-- AVATARS START HERE -->
+                        <ul class="collection">
+                            <li class="collection-item avatar">
+                                <img src="appleLogo.png" alt="Apple Logo" class="circle">
+                                <span class="title">Apple</span>
+                                <p>NAME</p>
+                                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                            </li>
+                        </ul>
                     </div>
                 </li>
             </ul>
@@ -71,7 +78,11 @@
         <!-- Company, content area -->
         <div class="container">
             <!-- Dynamic company name -->
-            <h4 class="header"><script type="text/javascript">document.write(globalCompany);</script></h4>
+            <h4 class="header">
+                <script type="text/javascript">
+                    document.write(globalCompany);
+                </script>
+            </h4>
             <div class="row">
                 <!-- Company card -->
                 <div class="col s6 m6 l6">

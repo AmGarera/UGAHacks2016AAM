@@ -18,7 +18,8 @@ function callAlchemy(companyName) {
      * rArray : Data structure within rData containing article/sentiment objects.
      */
 
-    fetch("https://access.alchemyapi.com/calls/data/GetNews?apikey=267ae3c897e398964e788596d723841287e7c700&return=enriched.url.url,enriched.url.title,enriched.url.docSentiment.type,enriched.url.docSentiment.score,enriched.url.entities.entity.text&start=now-3hr&end=now&q.enriched.url.enrichedTitle.entities.entity=|text="+ companyName +",type=company|&q.enriched.url.enrichedTitle.docSentiment.type=positive&q.enriched.url.enrichedTitle.taxonomy.taxonomy_.label=technology%20and%20computing&count=5&outputMode=json")
+
+    fetch("https://gateway-a.watsonplatform.net/calls/data/GetNews?outputMode=json&start=now-1d&end=now&count=5&q.enriched.url.title="+ companyName +"&return=enriched.url.url,enriched.url.title,enriched.url.docSentiment.type,enriched.url.docSentiment.score,enriched.url.entities.entity.text&apikey=267ae3c897e398964e788596d723841287e7c700")
         .then(function(rData) {
             console.log(rData);
             console.log(rData.url);

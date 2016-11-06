@@ -4,10 +4,7 @@
 //Makes the sentiment series array gloabl
 
 
-$(document).ready(function() {
-    var sentiemntSeries = [];
-    var sentimentScore;
-    
+
     function calcSetiment() {
         document.getElementById('welcomeDiv').style.display = "block";
         var positive = 0;
@@ -67,6 +64,10 @@ $(document).ready(function() {
             localStorage.setItem("sRating", negative);
             sentimentScore = negative
         }
+};
+    $(document).ready(function() {
+        var sentiemntSeries = [];
+        var sentimentScore;
 
         console.log(sentiemntSeries);
         var ctx = document.getElementById("pChartsCanvas");
@@ -88,6 +89,4 @@ $(document).ready(function() {
                 }]
             }
         });
-    }
-
-});
+    });

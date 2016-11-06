@@ -25,7 +25,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <script src="js/setiment.js"></script>
+    <script src="js/sentiment.js"></script>
 
     <script src="../node_modules/dexie/dist/dexie.js"></script>
 </head>
@@ -39,13 +39,15 @@
 <link rel="stylesheet" href="css/main.css">
 <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
+        <script src="js/profile.js"></script>
         <script src="js/alchemy_api.js"></script>
-        <script src="js/setiment.js"></script>
+        <script src="js/sentiment.js"></script>
         <script src="js/stock_api.js"></script>
+        <script src="js/dexie_api.js"></script>
 
 <!--content here -->
 <div class="right-align">
-    <button class="btn-flat">Login<i class="material-icons">https</i></button>
+    <a href="profile.html"><button class="btn-flat">Login<i class="material-icons">https</i></button></a>
 </div>
 <div class="container">
     <!--LOGO-->
@@ -65,10 +67,17 @@
     </div>
     <!--Search bar ends here-->
 </div>
-
 <button onclick="calcSetiment()">Sentiment</button>
+
+
+<button onclick="getStocks('AAPL')">Stock</button>
 <button onclick="getStocks('TSLA')">Stock</button>
 <button onclick="companySearch('TSLA')">Company Search</button>
+<button onclick="saveCompanyList('TSLA', 'Tesla', 2.66, 'tesla.com', 2.6)">Company Save</button>
+<button onclick="returnedData('TSLA')">Return Company</button>
+<button onclick="deleteCompany('TSLA')">Delete Company</button>
+
+<label id="thingOne"></label>
 
 
 <div id="chartDiv" class="center-align">

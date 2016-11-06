@@ -19,7 +19,7 @@ function callAlchemy(companyName) {
      */
 
 
-    fetch("https://gateway-a.watsonplatform.net/calls/data/GetNews?outputMode=json&start=now-1d&end=now&count=5&q.enriched.url.title="+ companyName +"&return=enriched.url.url,enriched.url.title,enriched.url.docSentiment.type,enriched.url.docSentiment.score,enriched.url.entities.entity.text&apikey=267ae3c897e398964e788596d723841287e7c700")
+    fetch("https://gateway-a.watsonplatform.net/calls/data/GetNews?outputMode=json&start=now-3h&end=now&count=5&q.enriched.url.title="+ companyName +"&return=enriched.url.url,enriched.url.title,enriched.url.docSentiment.type,enriched.url.docSentiment.score,enriched.url.entities.entity.text&apikey=267ae3c897e398964e788596d723841287e7c700")
         .then(function(rData) {
             console.log(rData);
             console.log(rData.url);

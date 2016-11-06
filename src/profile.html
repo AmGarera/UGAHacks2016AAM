@@ -82,18 +82,15 @@
                     <div class="card horizontal">
                         <div class="card-image">
                             <!-- Dynamic logo -->
-                            <img src="img/appleLogo.png" height="150">
+                            <img id="cLogo" src="img/appleLogo.png" height="150">
                         </div>
                         <div class="card-stacked">
                             <div class="card-content">
                                 <!-- Dynamic link to stock -->
-                                <a href="#">SYMB</a>
+                                <p>Stock: <span id="cName"></span></p>
                                 <br>
                                 <!-- Dynamic stock value -->
-                                <a href="#">$VAL</a>
-                                <br>
-                                <!-- Dynamic sentiment rating -->
-                                <p>Rating:</p>
+                                <p>Sentiment: <span id="rating"></span></p>
                             </div>
                             <div class="card-action">
                                 <!-- Add selected company to followed companies -->

@@ -14,11 +14,8 @@ $(document).ready(function() {
         closeOnClick: true,
         draggable: true
     });
-    
-    document.getElementById("cName").innerText = localStorage.getItem("symbol");
-    document.getElementById("rating").innerText = localStorage.getItem("sRating");
-    //document.getElementById("cValue").innerText = localStorage.getItem("cValue");
-    document.getElementById("cLogo").src = localStorage.getItem("cLogo");
+
+    setCompanyCards()
 
     //Add companies to list and remove them
     $('.addCompany').click(function(e) {

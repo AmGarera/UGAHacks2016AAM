@@ -66,7 +66,7 @@ $('.addCompany').click(function(e) {
     var symbol = localStorage.getItem("symbol");
     var rating = localStorage.getItem("rating");
     
-    saveCompanyList(rating, symbol, name)
+    saveCompanyList(symbol, rating, name)
 
     $(".collapsible-body").append(
         '<div class="chip">' + returnedData() + '</div>');

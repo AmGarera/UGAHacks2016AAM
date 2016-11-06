@@ -32,7 +32,7 @@ $(document).ready(function(){
 $('searchIcon').addClass('active');
 
 var searchedCompany = [];
-var globalSearchedCompanies = window.searchedCompany;
+var globalSearchedCompanies = searchedCompany;
 
 
 function getCompanyName() {
@@ -51,16 +51,16 @@ function getCompanyName() {
 }
 
 
-/* SENTIMENT CALLS START HERE */
-//STOCK PROVIDES THESE
-window.symbol;
-window.cValue;
-
-//ALCH PROVIDES THESE
-window.cName;
-window.sRating;
-window.cLogo;
-
-window.cName = globalSearchedCompanies[globalSearchedCompanies.length - 1];
-window.sRating = sentimentScore;
-window.cLogo = "https://logo.clearbit.com/" + cName + ".com";
+// /* SENTIMENT CALLS START HERE */
+// //STOCK PROVIDES THESE
+// window.symbol;
+// window.cValue;
+//
+// //ALCH PROVIDES THESE
+// window.cName;
+// window.sRating;
+// window.cLogo;
+//
+// window.cName = globalSearchedCompanies[globalSearchedCompanies.length - 1];
+// window.sRating = sentimentScore;
+// window.cLogo = "https://logo.clearbit.com/" + cName + ".com";

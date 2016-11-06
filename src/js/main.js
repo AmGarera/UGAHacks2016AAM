@@ -44,10 +44,20 @@ function getCompanyName() {
 
 
         callAlchemy(globalSearchedCompanies[globalSearchedCompanies.length - 1]);
+        companySearch(globalSearchedCompanies[globalSearchedCompanies.length - 1]);
         localStorage.setItem("cName", globalSearchedCompanies[globalSearchedCompanies.length - 1]);
         localStorage.setItem("cLogo", "https://logo.clearbit.com/" + globalSearchedCompanies[globalSearchedCompanies.length - 1] + ".com")
 
+        setCompanyCards()
     }
+}
+
+function setCompanyCards() {
+
+    document.getElementById("cName").innerText = localStorage.getItem("symbol");
+    document.getElementById("rating").innerText = localStorage.getItem("sRating");
+    //document.getElementById("cValue").innerText = localStorage.getItem("cValue");
+    document.getElementById("cLogo").src = localStorage.getItem("cLogo");
 }
 
 

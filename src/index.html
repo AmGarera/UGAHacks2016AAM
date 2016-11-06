@@ -25,7 +25,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <script src="js/setiment.js"></script>
+    <script src="js/sentiment.js"></script>
 
     <script src="../node_modules/dexie/dist/dexie.js"></script>
 </head>
@@ -39,8 +39,9 @@
 <link rel="stylesheet" href="css/main.css">
 <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
+        <script src="js/profile.js"></script>
         <script src="js/alchemy_api.js"></script>
-        <script src="js/setiment.js"></script>
+        <script src="js/sentiment.js"></script>
         <script src="js/stock_api.js"></script>
         <script src="js/dexie_api.js"></script>
 
@@ -68,7 +69,7 @@
 
 <button onclick="calcSetiment()">Setiment</button>
 
-<button onclick="getStocks('APPL')">Stock</button>
+<button onclick="getStocks('AAPL')">Stock</button>
 
 <button onclick="getStocks('TSLA')">Stock</button>
 <button onclick="companySearch('TSLA')">Company Search</button>
@@ -76,7 +77,7 @@
 <button onclick="returnedData('TSLA')">Return Company</button>
 <button onclick="deleteCompany('TSLA')">Delete Company</button>
 
-
+<label id="thingOne"></label>
 
 
 <div class="center-align">

@@ -20,8 +20,8 @@ $(document).ready(function(){
 });
 
 //Chart.js setup
-var ctx = document.getElementById("pChartsCanvas").getContext("2d");
-var posnegChart = new Chart(ctx, {
+var ctx = document.getElementById("pChartsCanvas");
+var pChartsCanvas = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
@@ -58,3 +58,23 @@ var posnegChart = new Chart(ctx, {
     }
 });
 
+//Add companies to list and remove them
+$('.addCompany').click(function(e) {
+    e.preventDefault();
+    
+    var name = localStorage.getItem("cName");
+    var symbol = localStorage.getItem("symbol");
+    var rating = localStorage.getItem("rating");
+    
+    saveCompanyList(rating, symbol, name)
+
+    $(".collapsible-body").append(
+        '<div class="chip">' + returnedData() + '</div>');
+});
+
+// Remove parent of 'remove' link when link is clicked.
+$('.chip').on('click', '.chip', function(e) {
+    e.preventDefault();
+
+    $(this).parent().remove();
+});

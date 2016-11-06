@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Profile</title>
+    <meta name="description" content="User's profile page. View company and stock sentiments.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="../node_modules/materialize-css/node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="../node_modules/dexie/dist/dexie.js"></script>
+    <script type="text/javascript" src="../node_modules/chart.js/dist/Chart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/dexie_api.js"></script>
+    <script src="js/alchemy_api.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/plugins.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <main>
+        <!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+        <!-- Side nav -->
+        <ul id="slide-out" class="side-nav fixed">
+            <li>
+                <div class="userView">
+                    <div class="background">
+                        <img src="img/pDefault.jpg">
+                    </div>
+                    <a href="#!user"><img class="circle" src="img/pPlaceHolder.png"></a>
+                    <a href="#!name"><span class="white-text name">John Doe</span></a>
+                    <a href="#!email"><span class="white-text email">jdoe@gmail.com</span></a>
+                </div>
+            </li>
+            <!-- Search field -->
+            <form id="searchSideNav" onsubmit="return false;">
+                <div class="input-field">
+                    <input id="search" type="search" onkeypress="getCompanyName();" required>
+                    <label for="search"><i class="material-icons searchIcon">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>
+            <!-- Collapsible company section -->
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">work</i>Companies</div>
+                    <div class="collapsible-body">
+                        <!-- CHIPS START HERE -->
+                        <div class="chip">Apple</div>
+                    </div>
+                </li>
+            </ul>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li class="logout"><a class="waves-effect z-depth-4" href="#!">Logout<i class="material-icons">lock_open</i></a></li>
+        </ul>
+        <!-- End side nav -->
+
+        <!-- Company, content area -->
+        <div class="container">
+            <!-- Dynamic company name -->
+            <h4 class="header">
+
+            </h4>
+            <div class="row">
+                <!-- Company card -->
+                <div class="col s6 m6 l6">
+                    <div class="card horizontal">
+                        <div class="card-image">
+                            <!-- Dynamic logo -->
+                            <img id="cLogo" src="img/appleLogo.png" height="150">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <!-- Dynamic link to stock -->
+                                <p>Stock: <span id="cName"></span></p>
+                                <br>
+                                <!-- Dynamic stock value -->
+                                <p>Sentiment: <span id="rating"></span></p>
+                            </div>
+                            <div class="card-action">
+                                <!-- Add selected company to followed companies -->
+                                <a href="#" class="addCompany">ADD</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Graphs -->
+            <div class="row">
+                <div class="pCharts">
+                    <canvas class="card" id="pChartsCanvas" width="400" height="150"></canvas>
+                </div>
+            </div>
+        </div>
+        <!-- End company, content area -->
+
+    </main>
+</body>
+
+</html>

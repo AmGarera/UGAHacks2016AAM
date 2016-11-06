@@ -1,0 +1,70 @@
+html, body {
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden;
+}
+
+body {
+    background-color: rgb(240,240,240);
+}
+
+.container {
+    width: 100%;
+    float: left;
+}
+
+/** Side nav *****************************************************************/
+.background img {
+    width: 100%;
+    height: 100%;
+}
+
+.active .searchIcon {
+    visibility: hidden;
+}
+
+#searchSideNav {
+    padding-left: 5%;
+    width: 90%;
+}
+
+.logout {
+    padding-top: 90%;
+}
+
+header, main, footer {
+    padding-left: 310px;
+}
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
+
+.glyphicon-remove {
+  cursor: pointer;
+  float: right;
+}
+
+.glyphicon-remove:hover {
+  color: #ed1c24;
+}
+
+/** Main Content *************************************************************/
+.pCharts {
+    width: 95%;
+    height: 300px;
+    padding-left: 10px;
+}
+
+.chip {
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.chip:hover {
+    cursor: pointer;
+}

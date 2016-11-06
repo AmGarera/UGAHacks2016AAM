@@ -167,9 +167,10 @@ gulp.task('archive', (done) => {
 
 gulp.task('build', (done) => {
     runSequence(
-        ['clean', 'lint:js'],
+        ['clean'],
         'copy',
     done)
 });
 
 gulp.task('default', ['build']);
+

@@ -34,8 +34,9 @@ function getStocks(symbol) {
             console.log("Date: "  + rArray[i][0]);
             console.log("Price: " + rArray[i][1]);
             dateArray.push(rArray[i][0]);
-            priceArray.push(rArray[i][1])
+            priceArray.push(rArray[i][1]);
         }
+        localStorage.setItem("cValue", rArray[i].length - 1.[1]);
         console.log(priceArray);
     }).catch(function(err) {
         // Error :(
@@ -60,4 +61,25 @@ function getStocks(symbol) {
         }
 
     });
+}
+
+function companySearch(company) {
+
+    var url = "https://chstocksearch.herokuapp.com/api/";
+
+    fetch(url + company)
+        .then(function(response) {
+            console.log(response);
+            console.log("Got JSON");
+            return response.json();
+        }).then(function (response) {
+            console.log("Transcribed JSON");
+            console.log(response);
+            localStorage.setItem("symbol", response[0].symbol);
+            getStocks(response[0].symbol)
+    }).catch(function(err) {
+        // Error :(
+        console.log(err)
+    });
+
 }

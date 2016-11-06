@@ -1,9 +1,9 @@
 //Side nav enabled and configured
 $('.button-collapse').sideNav({
-      menuWidth: 240, 
+      menuWidth: 240,
       edge: 'right',
-      closeOnClick: true, 
-      draggable: true 
+      closeOnClick: true,
+      draggable: true
     }
 );
 
@@ -11,10 +11,10 @@ $('.button-collapse').sideNav({
 $(document).ready(function(){
     $('.collapsible').collapsible();
     $('.button-collapse').sideNav({
-      menuWidth: 240, 
+      menuWidth: 240,
       edge: 'right',
-      closeOnClick: true, 
-      draggable: true 
+      closeOnClick: true,
+      draggable: true
     }
 );
 });
@@ -60,24 +60,15 @@ var posnegChart = new Chart(ctx, {
 
 
 /* SENTIMENT CALLS START HERE */
-var template = function(text) {
-    return '<div class="chip"><img id="companyLogoImg" src="https://logo.clearbit.com/" alt="Contact Person"><script type="text/javascript">document.write(globalCompany);</script></div>';
-};
-var main = function() {
-    $('form').submit(function() {
-        var todo = $('#todo');
-        if (todo.val() !== "") {
-            var html = template(todo.val());
-            $(html).appendTo('.list');
-            $(todo).val("");
-        }
-        return false;
-    });
-    $(document).on("click", '.glyphicon-remove', function() {
-        $(this).parent().remove();
-    });
-    $(document).on("click", '.glyphicon-star', function() {
-        $(this).toggleClass('active');
-    });
-};
-$(document).ready(main);
+//STOCK PROVIDES THESE
+var symbol;
+var cValue;
+
+//ALCH PROVIDES THESE
+var cName;
+var sRating;
+var cLogo;
+
+cName = globalSearchedCompanies[globalSearchedCompanies.length - 1];
+sRating = sentimentScore;
+cLogo = "https://logo.clearbit.com/" + cName + ".com";

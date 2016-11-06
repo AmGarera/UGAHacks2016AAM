@@ -3,7 +3,7 @@
  */
 //Makes the sentiment series array gloabl
 var sentiemntSeries = [];
-var sentiementSeries = [];
+var sentimentScore;
 
 $( document ).ready(function() {
     $('#posnegChart').hide();
@@ -53,14 +53,18 @@ function calcSetiment() {
     if (average > 0) {
         document.getElementById("sentiment").innerText = "Positive sentiment!";
         $('#posnegChart').show();
+        sentimentScore = positive
+
     }
     else if (average == 0) {
         document.getElementById("sentiment").innerText = "Neutral sentiment!";
         $('#posnegChart').hide();
+        sentimentScore = 0
     }
     else {
         document.getElementById("sentiment").innerText = "Negative sentiment!";
         $('#posnegChart').show();
+        sentimentScore= negative
     }
 
     console.log(sentiemntSeries);

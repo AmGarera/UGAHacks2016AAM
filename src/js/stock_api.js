@@ -74,6 +74,7 @@ function companySearch(company) {
         }).then(function (response) {
             console.log("Transcribed JSON");
             console.log(response);
+            getStocks(response[0].symbol)
     }).catch(function(err) {
         // Error :(
         console.log(err)

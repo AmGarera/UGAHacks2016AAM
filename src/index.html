@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -23,78 +24,62 @@
     <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
 
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script src="js/sentiment.js"></script>
 
     <script src="../node_modules/dexie/dist/dexie.js"></script>
 </head>
+
 <body>
-<!--[if lte IE 9]>
+    <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience and security.</p>
 <![endif]-->
 
-<!--<link rel="stylesheet" href="css/normalize.css">-->
-<link rel="stylesheet" href="css/main.css">
-<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--<link rel="stylesheet" href="css/normalize.css">-->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
-        <script src="js/alchemy_api.js"></script>
-        <script src="js/sentiment.js"></script>
-        <script src="js/stock_api.js"></script>
-        <script src="js/dexie_api.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/alchemy_api.js"></script>
+    <script src="js/sentiment.js"></script>
+    <script src="js/stock_api.js"></script>
+    <script src="js/dexie_api.js"></script>
 
-<!--content here -->
-<div class="right-align">
-    <a href="profile.html"><button class="btn-flat">Login<i class="material-icons">https</i></button></a>
-</div>
-<div class="container">
-    <!--LOGO-->
-    <div class="card-title center-align"><img id="companyLogoImg" src="https://logo.clearbit.com/"
-                                              data-default-src="http://www.fmwconcepts.com/imagemagick/fourier_transforms/images/white.png">
-        <!--Web App Title-->
-        <h1>Fiscus</h1></div>
-    <!--Search Bar starts here-->
-    <div class="nav-wrapper">
-        <form onsubmit="return false;">
-            <div class="input-field">
-                <input id="search" type="search" onkeypress="getCompanyName();" required>
-                <label for="search"><i class="material-icons searchIcon">search</i></label>
-                <i class="material-icons">close</i>
-            </div>
-        </form>
+    <!--content here -->
+    <div class="right-align">
+        <a href="profile.html"><button class="btn-flat">Login<i class="material-icons">https</i></button></a>
     </div>
-    <!--Search bar ends here-->
-</div>
-<button onclick="calcSetiment()">Sentiment</button>
-
-
-<button onclick="getStocks('AAPL')">Stock</button>
-<button onclick="getStocks('TSLA')">Stock</button>
-<button onclick="companySearch('TSLA')">Company Search</button>
-<button onclick="saveCompanyList('TSLA', 'Tesla', 2.66, 'tesla.com', 2.6)">Company Save</button>
-<button onclick="returnedData('TSLA')">Return Company</button>
-<button onclick="deleteCompany('TSLA')">Delete Company</button>
-
-<label id="thingOne"></label>
-
-
-<div id="chartDiv" class="center-align">
-    <div class="row">
-        <div class="col s6 offset-s3">
-            <div class="card-panel z-depth-4">
-                <label id="sentiment"></label>
-
-                <!--<canvas id="posnegChart" width="300" height="300"></canvas>-->
-                <!--<canvas id="stockChart" width="300" height="300"></canvas>-->
-            <script>
-
-                </script>
-            </div>
+    <div class="container">
+        <!--LOGO-->
+        <div class="card-title center-align"><img id="companyLogoImg" src="https://logo.clearbit.com/" data-default-src="http://www.fmwconcepts.com/imagemagick/fourier_transforms/images/white.png">
+            <!--Web App Title-->
+            <h1>Fiscus</h1>
         </div>
+        <!--Search Bar starts here-->
+        <div class="nav-wrapper">
+            <form onsubmit="return false;">
+                <div class="input-field">
+                    <input id="search" type="search" onkeypress="getCompanyName();" required>
+                    <label for="search"><i class="material-icons searchIcon">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>
+        </div>
+        <!--Search bar ends here-->
     </div>
-</div>
+    <button onclick="calcSetiment()">Sentiment</button>
 
-<script src="js/main.js"></script>
+
+    <button onclick="getStocks('AAPL')">Stock</button>
+    <button onclick="getStocks('TSLA')">Stock</button>
+    <button onclick="companySearch('TSLA')">Company Search</button>
+    <button onclick="saveCompanyList('TSLA', 'Tesla', 2.66, 'tesla.com', 2.6)">Company Save</button>
+    <button onclick="returnedData('TSLA')">Return Company</button>
+    <button onclick="deleteCompany('TSLA')">Delete Company</button>
+
+    <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -1,16 +1,15 @@
-//Side nav enabled and configured
-$('.button-collapse').sideNav({
-      menuWidth: 240,
-      edge: 'right',
-      closeOnClick: true,
-      draggable: true
-    }
-);
-
 //Collapsible company section enabled
-$(document).ready(function(){
+$(document).ready(function() {
+    //Side nav enabled and configured
+    $('.button-collapse').sideNav({
+        menuWidth: 240,
+        edge: 'right',
+        closeOnClick: true,
+        draggable: true
+    });
     $('.collapsible').collapsible();
     $('.button-collapse').sideNav({
+
       menuWidth: 240,
       edge: 'right',
       closeOnClick: true,
@@ -58,11 +57,25 @@ var pChartsCanvas = new Chart(ctx, {
                 ticks: {
                     beginAtZero:true
                 }
+>>>>>>> origin/master
             }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
         }
-    }
-});
+    });
 
+<<<<<<< HEAD
+    //Add companies to list and remove them
+    $('.addCompany').click(function(e) {
+        e.preventDefault();
+=======
 //Add companies to list and remove them
 $('.addCompany').click(function(e) {
     e.preventDefault();
@@ -72,15 +85,28 @@ $('.addCompany').click(function(e) {
     var rating = localStorage.getItem("rating");
 
     saveCompanyList(rating, symbol, name)
+>>>>>>> origin/master
 
-    $(".collapsible-body").append(
-        '<div class="chip">' + returnedData() + '</div>');
+        var name = localStorage.getItem("cName");
+        var symbol = localStorage.getItem("symbol");
+        var rating = localStorage.getItem("rating");
+
+        saveCompanyList(symbol, rating, name)
+
+        $(".collapsible-body").append(
+            '<div class="chip">' + returnedData() + '</div>');
+    });
+
+<<<<<<< HEAD
+    // Remove parent of 'remove' link when link is clicked.
+    $('.chip').on('click', '.chip', function(e) {
+        e.preventDefault();
+
+        $(this).parent().remove();
+    });
 });
-
-// Remove parent of 'remove' link when link is clicked.
-$('.chip').on('click', '.chip', function(e) {
-    e.preventDefault();
-
+=======
     $(this).parent().remove();
 });
 
+>>>>>>> origin/master

@@ -10,7 +10,6 @@ $( document ).ready(function() {
 });
 
 function calcSetiment() {
-    document.getElementById('welcomeDiv').style.display = "block";
     var positive = 0;
     var negative = 0;
     var average = 0;
